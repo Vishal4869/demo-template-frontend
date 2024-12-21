@@ -19,6 +19,7 @@ export class LogoutComponent {
   logout(){
     localStorage.removeItem('access_token');
     localStorage.removeItem('loggedInUser');
+    console.clear();
     this.router.navigate(['/']);
   }
 
