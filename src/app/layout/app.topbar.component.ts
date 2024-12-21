@@ -31,7 +31,10 @@ export class AppTopBarComponent {
                     items: [
                         {
                             label: 'Setting',
-                            icon: 'pi pi-cog'
+                            icon: 'pi pi-cog',
+                            command: () => {
+                                alert('setting clicked')
+                            }
                         },
                         {
                             label: 'Logout',
