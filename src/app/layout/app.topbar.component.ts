@@ -2,6 +2,7 @@ import { Component, ElementRef, ViewChild } from '@angular/core';
 import { MenuItem } from 'primeng/api';
 import { LayoutService } from "./service/app.layout.service";
 import { Router } from '@angular/router';
+import { MenuModule } from 'primeng/menu';
 
 
 @Component({
@@ -23,7 +24,26 @@ export class AppTopBarComponent {
 
     constructor(public layoutService: LayoutService,
         private router: Router
-        ) { }
+        ) { 
+            this.items = [
+                {
+                    label: 'Profile',
+                    items: [
+                        {
+                            label: 'Setting',
+                            icon: 'pi pi-cog'
+                        },
+                        {
+                            label: 'Logout',
+                            icon: 'pi pi-power-off',
+                            command: () => {
+                                this.logOut();
+                            }
+                        }
+                    ]
+                }
+            ];
+        }
 
     set theme(val: string) {
         this.layoutService.config.update((config) => ({

@@ -6,15 +6,6 @@ import { AuthGuard } from './@helper/auth.guard';
 @NgModule({
     imports: [
         RouterModule.forRoot([
-            // {
-            //     path: '', component: AppLayoutComponent,
-            //     canActivate:[AuthGuard],
-            //     children: [
-            //         { path: '', loadChildren: () => import('./main/main.module').then(m => m.MainModule) },
-            //         // { path: '', loadChildren: () => import('./main/dashbaord/dashboard.module').then(m => m.DashboardModule) },
-
-            //     ]
-            // },
             {
                 path: '', component: AppLayoutComponent,
                 canActivate:[AuthGuard],
