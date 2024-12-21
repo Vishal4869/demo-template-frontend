@@ -32,8 +32,8 @@ export class LoginComponent implements OnInit {
   onLogin(loginForm: FormGroup) {
     this.loginService.login(loginForm.value.username, loginForm.value.password).subscribe((res: any) => {
       console.log(res);
-      if(res.token) {
-        localStorage.setItem('access_token', res.token);
+      if(res.accessToken) {
+        localStorage.setItem('access_token', res.accessToken);
         this.loginService.me().subscribe((res: any) => {
           localStorage.setItem('loggedInUser', JSON.stringify(res));
           this.router.navigate(['/']);
